@@ -1,0 +1,15 @@
+<h3>Will show all the articles in the <i>database</i></h3>
+<table>
+    <thead>
+        <tr>Title</tr>
+        <tr>Description</tr>
+        <tr>Action</tr>
+    </thead>
+    <tbody>
+        <% @articles.each do | article | %>
+            <td><%= article.title %></td>
+            <td><%= article.description %></td>
+            <td>action</td>
+    </tbody>
+        <% end %>
+</table>
