@@ -1,0 +1,14 @@
+<p>Edititng the article</p>
+<% if @article.errors.any? %> 
+	<%puts "#{@article.errors.full_messages}"%> 
+	<h2>The following errors prevented the article from being saved</h2> 
+	<ul> 
+		<% @article.errors.full_messages.each do |err| %> 
+			<li><%= err %></li> 
+		<% end %> 
+	</ul>
+<% end %>
+
+<%= render 'articles/form' %>
+
+<%= link_to 'Articles Listing Page', articles_path%>

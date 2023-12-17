@@ -1,23 +1,19 @@
-<p>Showing new article creation form page here</p>
+<h3 class="text-center">Showing new article creation form page here</h3>
 <% if @article.errors.any? %> 
-	<%puts "#{@article.errors.full_messages}"%> 
-	<h2>The following errors prevented the article from being saved</h2> 
-	<ul> 
-		<% @article.errors.full_messages.each do |err| %> 
-			<li><%= err %></li> 
-		<% end %> 
-	</ul>
+    
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">The following errors prevented the article from being saved</h4>
+        <p>
+            <ul> 
+                <% @article.errors.full_messages.each do |err| %> 
+                    <li><%= err %></li> 
+                <% end %> 
+            </ul>
+        </p>
+    </div>
 <% end %>
 
-<%=form_with scope: :article, url: articles_path, local: true do |f| %>
-    <p>
-        <%=f.label :title%><br/>
-        <%=f.text_field :title%>
-    </p>
-    <p>
-        <%=f.label :description%><br/>
-        <%=f.text_field :description%>
-    </p>
-        <%=f.submit%>
 
-<%end%>
+<%= render 'articles/form' %>
+
+<%= link_to 'Articles Listing Page', articles_path%>
