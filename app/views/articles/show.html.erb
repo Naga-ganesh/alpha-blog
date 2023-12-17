@@ -1,4 +1,5 @@
 <h1>Showing articles:</h1>
 <p>Title: <%= @article.title %></p>
 <p>Description: <%= simple_format(@article.description) %></p>
+<p>By: <%= User.find(@article.user_id).username %></p>
 <%=link_to 'Back to Articles Listing', articles_path %>
