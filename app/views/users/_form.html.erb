@@ -17,7 +17,7 @@
           <%=f.password_field :password, placeholder: "Enter a password"%>
       </div>
     </div>
-    <%=f.submit "signup" %>
+    <%=f.submit (@user.new_record? ? "Sign Up" : "Update User")%>
   
   <%end%>
 </div>
