@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update]
 
   def show
-    
+
     if @article.title.length == 0
       @article.title = "No title"
     end
@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    
+
     if @article.update(article_params)
       flash[:notice] = "Article has been updated successfully"
       redirect_to @article
@@ -53,5 +53,5 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :description)
   end
-  
+
 end
