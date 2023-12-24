@@ -11,6 +11,9 @@
           <%=f.text_area :description%>
       </div>
     </div>
+    <%= f.collection_select(:category_ids, Category.all, :id, :name, {prompt: "Select multiple categories", multiple: true, class: "custom-select shadow rounded" })%>
+
+   
     <%=f.submit%>
   
   <%end%>
